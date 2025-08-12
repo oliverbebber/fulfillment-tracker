@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fulfillment Tracker</title>
+    <link rel="stylesheet" href="/fulfillment-tracker/style.css">
+</head>
+<body>
+  <h1>
+    Fulfillment Tracker
+  </h1>
 
+  <!-- Input form for adding a fulfillment record -->
+  <label for="start-time">Start Time:</label>
+  <input type="time" id="start-time" required />
+
+  <label for="end-time">End Time:</label>
+  <input type="time" id="end-time" required />
+
+  <label for="orders-start">Total Orders at Start:</label>
+  <input type="number" id="orders-start" min="0" required />
+
+  <label for="orders-left">Orders Left at End:</label>
+  <input type="number" id="orders-left" min="0" required />
+
+  <button onclick="addRecord()">Add Record</button>
+
+  <!-- Displays calculation results after a record is added -->
+  <div class="result" id="result"></div>
+
+  <!-- Table to display saved records -->
+  <h2>Saved Records</h2>
+  <table id="records-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Orders Start</th>
+        <th>Orders Left</th>
+        <th>Orders Completed</th>
+        <th>Time Worked (hr)</th>
+        <th>Order Rate</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Button to remove all saved records -->
+  <button onclick="clearAll()" style="margin-top:1em; background:#f44336; color:#fff;">Remove All Records</button>
+</body>
+</html>
